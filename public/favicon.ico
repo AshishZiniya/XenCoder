@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" aria-hidden="true">
+  <style>
+    path { fill: #1c1917; }
+    @media (prefers-color-scheme: dark) {
+      path { fill: #f5f5f4; }
+    }
+  </style>
+  <!-- Simple leaf shape for Mind Garden -->
+  <path d="M16 2c-6 6-10 14-10 20 0 5 4 8 10 8s10-3 10-8c0-6-4-14-10-20z"/>
+</svg>

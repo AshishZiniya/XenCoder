@@ -1,0 +1,424 @@
+.markdown-content {
+  font-size: 16.5px;
+  line-height: 1.6;
+  color: var(--foreground);
+  letter-spacing: 0.2px;
+}
+
+/* LaTeX math (KaTeX) – block display */
+.markdown-content .katex-display {
+  margin: var(--spacing-md) 0;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: var(--spacing-md);
+  background: var(--background-secondary);
+  border-radius: var(--radius-md);
+  border-left: 3px solid var(--primary);
+}
+
+/* Headings - VS Code style */
+.markdown-content h1 {
+  font-size: 24px;
+  font-weight: 700;
+  margin-top: 1.5rem;
+  margin-bottom: var(--spacing-md);
+  line-height: 1.3;
+  color: var(--foreground);
+  letter-spacing: -0.3px;
+}
+
+.markdown-content h1:first-child {
+  margin-top: 0;
+}
+
+.markdown-content h2 {
+  font-size: 21px;
+  font-weight: 700;
+  margin-top: 1.375rem;
+  margin-bottom: var(--spacing-md);
+  line-height: 1.35;
+  color: var(--foreground);
+  border-bottom: 1px solid var(--border);
+  padding-bottom: var(--spacing-sm);
+}
+
+.markdown-content h2:first-child {
+  margin-top: 0;
+}
+
+.markdown-content h3 {
+  font-size: 15px;
+  font-weight: 700;
+  margin-top: 1.25rem;
+  margin-bottom: var(--spacing-sm);
+  line-height: 1.4;
+  color: var(--foreground);
+}
+
+.markdown-content h3:first-child {
+  margin-top: 0;
+}
+
+.markdown-content h4 {
+  font-size: 14px;
+  font-weight: 700;
+  margin-top: 1rem;
+  margin-bottom: var(--spacing-sm);
+  line-height: 1.4;
+  color: var(--foreground);
+}
+
+.markdown-content h4:first-child {
+  margin-top: 0;
+}
+
+.markdown-content h5 {
+  font-size: 13px;
+  font-weight: 700;
+  margin-top: var(--spacing-md);
+  margin-bottom: var(--spacing-xs);
+  line-height: 1.5;
+  color: var(--foreground);
+}
+
+.markdown-content h5:first-child {
+  margin-top: 0;
+}
+
+.markdown-content h6 {
+  font-size: 12px;
+  font-weight: 700;
+  margin-top: var(--spacing-md);
+  margin-bottom: var(--spacing-xs);
+  line-height: 1.5;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.markdown-content h6:first-child {
+  margin-top: 0;
+}
+
+/* Paragraphs */
+.markdown-content p {
+  margin-top: var(--spacing-md);
+  margin-bottom: var(--spacing-md);
+}
+
+.markdown-content p:first-child {
+  margin-top: 0;
+}
+
+.markdown-content p:last-child {
+  margin-bottom: 0;
+}
+
+/* Lists */
+.markdown-content ul,
+.markdown-content ol {
+  margin-top: var(--spacing-md);
+  margin-bottom: var(--spacing-md);
+  padding-left: 2rem;
+}
+
+.markdown-content ul {
+  list-style-type: disc;
+}
+
+.markdown-content ol {
+  list-style-type: decimal;
+}
+
+.markdown-content li {
+  margin-bottom: var(--spacing-sm);
+  line-height: 1.6;
+}
+
+.markdown-content li:last-child {
+  margin-bottom: 0;
+}
+
+.markdown-content li>ul,
+.markdown-content li>ol {
+  margin-top: var(--spacing-sm);
+  margin-bottom: var(--spacing-sm);
+}
+
+/* Inline code - VS Code style (No background inside code blocks) */
+.markdown-content :not(pre)>code {
+  font-size: 15px;
+  font-family: var(--font-mono), monospace;
+  background-color: rgba(78, 201, 176, 0.1);
+  padding: 2px 6px;
+  border-radius: var(--radius-sm);
+  color: var(--secondary);
+  font-weight: 500;
+  border: 1px solid rgba(78, 201, 176, 0.2);
+  transition: all 0.15s ease;
+}
+
+/* Code blocks - VS Code style */
+.markdown-code-block-wrapper {
+  position: relative;
+  margin-top: var(--spacing-md);
+  margin-bottom: var(--spacing-md);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid #2d2d30;
+  background: #0d0d0d;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  display: flex;
+  flex-direction: column;
+}
+
+.markdown-code-block-lang {
+  display: inline-block;
+  padding: 10px 18px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #a0a0a0;
+  background: linear-gradient(to bottom, #1e1e1e, #121212);
+  border-bottom: 1px solid #2d2d30;
+  border-radius: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+}
+
+.markdown-code-block-wrapper .markdown-copy-btn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  aspect-ratio: 1 / 1;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-sm);
+  background-color: transparent;
+  color: #858585;
+  border: 1px solid transparent;
+  cursor: pointer;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.15s ease;
+  outline: none;
+}
+
+.markdown-code-block-wrapper:hover .markdown-copy-btn {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.markdown-code-block-wrapper .markdown-copy-btn:hover {
+  background-color: rgba(86, 156, 214, 0.2);
+  color: #569cd6;
+  border-color: rgba(86, 156, 214, 0.3);
+}
+
+.markdown-code-block-wrapper .markdown-copy-btn:active {
+  transform: scale(0.92);
+  opacity: 0.8;
+}
+
+/* Code block content */
+.markdown-content pre {
+  margin: 0;
+  padding: 20px;
+  overflow-x: auto;
+  background-color: #0d0d0d;
+  color: #e0e0e0;
+  border-radius: 0;
+  font-size: 16px;
+  line-height: 1.7;
+  font-family: var(--font-mono), monospace;
+  letter-spacing: 0.3px;
+}
+
+.markdown-content pre code {
+  background: transparent;
+  padding: 0;
+  font-size: inherit;
+  color: inherit;
+  border: none;
+  font-family: inherit;
+  line-height: inherit;
+}
+
+/* Syntax highlighting spans - CLEAN AND VIBRANT */
+.markdown-content pre span[class^="hljs-"],
+.markdown-content pre code span[class^="hljs-"],
+.markdown-content pre code {
+  background-color: transparent !important;
+  border: none !important;
+}
+
+.markdown-content .hljs-keyword {
+  color: #c678dd; /* Purple for keywords */
+}
+
+/* Specific red/salmon for imports, from, and return per reference image */
+.markdown-content .hljs-keyword.hljs-import,
+.markdown-content .hljs-keyword.hljs-from,
+.markdown-content .hljs-keyword.hljs-return {
+  color: #e06c75;
+}
+
+.markdown-content .hljs-string {
+  color: #98c379; /* Soft Green */
+}
+
+.markdown-content .hljs-number {
+  color: #d19a66; /* Orange/Tan */
+}
+
+.markdown-content .hljs-function,
+.markdown-content .hljs-title {
+  color: #61afef; /* Sky Blue */
+}
+
+.markdown-content .hljs-built_in,
+.markdown-content .hljs-title.class_ {
+  color: #e6c07b; /* Warm Yellow for React, ReactDOM, etc. */
+}
+
+.markdown-content .hljs-attr {
+  color: #d19a66; /* Orange/Tan */
+}
+
+.markdown-content .hljs-comment {
+  color: #7f848e;
+  font-style: italic;
+}
+
+.markdown-content .hljs-variable,
+.markdown-content .hljs-params {
+  color: #e06c75; /* Salmon Red for variables/params */
+}
+
+.markdown-content .hljs-literal {
+  color: #56b6c2; /* Cyan */
+}
+
+.markdown-content .hljs-operator,
+.markdown-content .hljs-punctuation {
+  color: #abb2bf; /* Grayish White */
+}
+
+.markdown-content .hljs-tag,
+.markdown-content .hljs-name {
+  color: #e06c75; /* Salmon Red for JSX tags */
+}
+
+/* Tables - VS Code style */
+.markdown-table-wrapper {
+  margin-top: var(--spacing-md);
+  margin-bottom: var(--spacing-md);
+  overflow-x: auto;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+}
+
+.markdown-content table {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 13px;
+}
+
+.markdown-content table th,
+.markdown-content table td {
+  border: 1px solid var(--border);
+  padding: 8px 12px;
+  text-align: left;
+}
+
+.markdown-content table th {
+  background-color: var(--background-tertiary);
+  font-weight: 700;
+  color: var(--primary);
+  text-transform: uppercase;
+  font-size: 11px;
+  letter-spacing: 0.05em;
+}
+
+.markdown-content table tr:nth-child(even) {
+  background-color: rgba(86, 156, 214, 0.05);
+}
+
+.markdown-content table tr:hover {
+  background-color: var(--background-secondary);
+}
+
+/* Blockquotes - VS Code style */
+.markdown-content blockquote {
+  margin-top: var(--spacing-md);
+  margin-bottom: var(--spacing-md);
+  margin-left: 0;
+  padding: var(--spacing-md) 0 var(--spacing-md) 12px;
+  border-left: 4px solid var(--primary);
+  background-color: rgba(86, 156, 214, 0.05);
+  border-radius: var(--radius-md);
+  color: var(--text-secondary);
+  font-style: italic;
+}
+
+/* Links - VS Code style */
+.markdown-content a {
+  color: var(--primary);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: all 0.15s ease;
+  font-weight: 500;
+}
+
+.markdown-content a:hover {
+  border-bottom-color: var(--primary);
+  color: var(--primary-hover);
+}
+
+.dark .markdown-content a {
+  color: var(--primary);
+}
+
+.dark .markdown-content a:hover {
+  color: var(--primary-hover);
+}
+
+/* Strong emphasis */
+.markdown-content strong {
+  font-weight: 700;
+  color: var(--foreground);
+}
+
+.markdown-content em {
+  font-style: italic;
+  color: var(--text-secondary);
+}
+
+/* Horizontal rule */
+.markdown-content hr {
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  border: none;
+  border-top: 1px solid var(--border);
+}
+
+/* Animation for new messages */
+.assistant-animate {
+  animation: slideIn 0.2s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

@@ -1,0 +1,124 @@
+/* Override React Flow cursors and canvas background - must load after @xyflow/react/dist/style.css */
+.react-flow {
+  background-color: var(--background);
+}
+
+.react-flow__pane,
+.react-flow__pane.draggable,
+.react-flow__pane.dragging,
+.react-flow__pane.selection {
+  cursor: default !important;
+}
+
+.react-flow__nodesselection-rect {
+  cursor: default !important;
+}
+
+.react-flow__node,
+.react-flow__node.selectable,
+.react-flow__node.draggable,
+.react-flow__node.draggable.dragging {
+  cursor: default !important;
+}
+
+/* Thicker invisible resize handles for note nodes - larger hit area, no visible UI */
+.note-node .react-flow__resize-control.handle {
+  width: 24px;
+  height: 24px;
+  background: transparent !important;
+  border: none !important;
+}
+
+.note-node .react-flow__resize-control.line {
+  border-color: transparent !important;
+}
+
+.note-node .react-flow__resize-control.line.left,
+.note-node .react-flow__resize-control.line.right {
+  width: 20px;
+  transform: translate(-50%, 0);
+}
+
+.note-node .react-flow__resize-control.line.left {
+  border-left-width: 20px;
+}
+
+.note-node .react-flow__resize-control.line.right {
+  border-right-width: 20px;
+}
+
+.note-node .react-flow__resize-control.line.top,
+.note-node .react-flow__resize-control.line.bottom {
+  height: 20px;
+  transform: translate(0, -50%);
+}
+
+.note-node .react-flow__resize-control.line.top {
+  border-top-width: 20px;
+}
+
+.note-node .react-flow__resize-control.line.bottom {
+  border-bottom-width: 20px;
+}
+
+/* Edge styling - VS Code theme */
+.react-flow__edge {
+  stroke: var(--border);
+  stroke-width: 1.5;
+}
+
+.react-flow__edge.selected {
+  stroke: var(--primary);
+}
+
+.react-flow__edge-path {
+  stroke: var(--border);
+}
+
+.react-flow__edge-path.animated {
+  stroke-dasharray: 5;
+  animation: dashdraw 0.5s linear infinite;
+}
+
+@keyframes dashdraw {
+  from {
+    stroke-dashoffset: 0;
+  }
+  to {
+    stroke-dashoffset: -10;
+  }
+}
+
+/* Node selection - Removed highlight ring */
+.react-flow__node.selected {
+  outline: none !important;
+}
+
+/* Control buttons */
+.react-flow__controls {
+  background-color: var(--background-secondary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+}
+
+.react-flow__controls-button {
+  background-color: transparent;
+  border: 1px solid transparent;
+  color: var(--text-secondary);
+  transition: all 0.15s ease;
+}
+
+.react-flow__controls-button:hover {
+  background-color: var(--background-tertiary);
+  color: var(--foreground);
+}
+
+.react-flow__controls-button:active {
+  transform: scale(0.95);
+}
+
+/* Attribution */
+.react-flow__attribution {
+  display: none;
+}
