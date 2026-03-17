@@ -6,6 +6,7 @@ import "./canvas-overrides.css";
 import "./markdown-styles.css";
 import "../components/MaterialIcon.css";
 import { ThemeProvider } from "../components/ThemeProvider";
+import { SessionProvider } from "next-auth/react";
 
 const barlow = Barlow({
   variable: "--font-barlow",
@@ -14,8 +15,8 @@ const barlow = Barlow({
 });
 
 export const metadata: Metadata = {
-  title: "FindGarden - AI Note Taking",
-  description: "Create, organize, and enhance your notes with AI assistance",
+  title: "XenCoder - Agentic Multi-Chat Canvas",
+  description: "Next-generation collaborative canvas for multi-agent coding and intelligent workflows.",
 };
 
 export default function RootLayout({
@@ -30,7 +31,9 @@ export default function RootLayout({
         className={`${barlow.variable} antialiased`}
       >
         <ThemeProvider>
-          {children}
+          <SessionProvider>
+            {children}
+          </SessionProvider>
         </ThemeProvider>
       </body>
     </html>

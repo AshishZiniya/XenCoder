@@ -13,6 +13,7 @@ import {
   EdgeChange,
   ReactFlowInstance,
   NodeDimensionChange,
+  Panel,
 } from '@xyflow/react'
 import '@xyflow/react/dist/style.css'
 import { useAtom } from 'jotai'
@@ -20,6 +21,7 @@ import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import './canvas-overrides.css'
 import NoteNode, { NoteData } from '../components/NoteNode'
 import SystemInstructionsButton from '../components/SystemInstructionsButton'
+import UserMenu from '../components/UserMenu'
 import ZoomControls from '../components/ZoomControls'
 import { edgesAtom, lastAddedNodeIdAtom, nodesAtom, viewportAtom } from '../store/canvasAtoms'
 import {
@@ -276,7 +278,10 @@ function Canvas() {
       className="bg-background"
     >
       <ZoomControls />
-      <SystemInstructionsButton />
+      <Panel position="top-right" className="m-4! flex flex-col gap-2">
+        <UserMenu />
+        <SystemInstructionsButton />
+      </Panel>
     </ReactFlow>
   )
 }
