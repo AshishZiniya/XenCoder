@@ -7,6 +7,7 @@ import "./markdown-styles.css";
 import "../components/MaterialIcon.css";
 import { ThemeProvider } from "../components/ThemeProvider";
 import { SessionProvider } from "next-auth/react";
+import { Analytics } from "@vercel/analytics/next"
 
 const barlow = Barlow({
   variable: "--font-barlow",
@@ -30,6 +31,7 @@ export default function RootLayout({
         suppressHydrationWarning
         className={`${barlow.variable} antialiased`}
       >
+        <Analytics/>
         <ThemeProvider>
           <SessionProvider>
             {children}
