@@ -8,6 +8,7 @@ import "../components/MaterialIcon.css";
 import { ThemeProvider } from "../components/ThemeProvider";
 import { SessionProvider } from "next-auth/react";
 import { Analytics } from "@vercel/analytics/next"
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 const barlow = Barlow({
   variable: "--font-barlow",
@@ -32,6 +33,7 @@ export default function RootLayout({
         className={`${barlow.variable} antialiased`}
       >
         <Analytics/>
+        <SpeedInsights/>
         <ThemeProvider>
           <SessionProvider>
             {children}
