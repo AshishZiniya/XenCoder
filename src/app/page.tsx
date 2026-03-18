@@ -1,9 +1,5 @@
-import App from './App';
+import { redirect } from 'next/navigation'
 
 export default function Home() {
-  return (
-    <main>
-      <App />
-    </main>
-  );
+  redirect('/canvas')
 }

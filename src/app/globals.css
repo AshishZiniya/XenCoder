@@ -1,6 +1,16 @@
 @import "tailwindcss";
 
 :root {
+  /* Xencoder Design System Colors */
+  --xencoder-dark: #0f172a;
+  --xencoder-sidebar: #1e293b;
+  --xencoder-card: #1e293b;
+  --xencoder-input: #0f172a;
+  --xencoder-accent: #3b82f6;
+  --xencoder-border: #374151;
+  --xencoder-text-muted: #9ca3af;
+  --xencoder-code-bg: #0f172a;
+
   /* VS Code One Dark Pro theme (Default Permanent Theme) */
   --background: #1e1e1e;
   --foreground: #d4d4d4;
@@ -78,16 +88,42 @@ html {
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: var(--font-barlow), -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  background: var(--xencoder-dark);
+  color: #ffffff;
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
   font-size: 16px;
   line-height: 1.6;
   transition: background-color 0.2s ease, color 0.2s ease;
   letter-spacing: 0.3px;
 }
 
-/* Scrollbar customization - VS Code style */
+/* Custom scrollbar for Xencoder tools */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 8px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: var(--xencoder-sidebar);
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: var(--xencoder-border);
+  border-radius: 4px;
+}
+
+/* Code formatting styles */
+.line-number {
+  color: #4b5563;
+  text-align: right;
+  padding-right: 1rem;
+  user-select: none;
+}
+
+.code-key { color: #93c5fd; }
+.code-string { color: #fdba74; }
+.code-number { color: #86efac; }
+
+/* VS Code style scrollbar */
 ::-webkit-scrollbar {
   width: 12px;
   height: 12px;

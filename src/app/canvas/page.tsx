@@ -18,19 +18,19 @@ import {
 import '@xyflow/react/dist/style.css'
 import { useAtom } from 'jotai'
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
-import './canvas-overrides.css'
-import NoteNode, { NoteData } from '../components/NoteNode'
-import SystemInstructionsButton from '../components/SystemInstructionsButton'
-import UserMenu from '../components/UserMenu'
-import ZoomControls from '../components/ZoomControls'
-import { edgesAtom, lastAddedNodeIdAtom, nodesAtom, viewportAtom } from '../store/canvasAtoms'
+import '@/app/canvas-overrides.css'
+import NoteNode, { NoteData } from '@/components/NoteNode'
+import SystemInstructionsButton from '@/components/SystemInstructionsButton'
+import UserMenu from '@/components/UserMenu'
+import ZoomControls from '@/components/ZoomControls'
+import { edgesAtom, lastAddedNodeIdAtom, nodesAtom, viewportAtom } from '@/store/canvasAtoms'
 import {
   pushFuture,
   pushHistory,
   pushToPast,
   redo,
   undo,
-} from '../store/historyStore'
+} from '@/store/historyStore'
 import { Node, Edge, Viewport } from '@xyflow/react';
 
 function anyNodeInView(nodes: Node[], viewport: Viewport, viewWidth: number, viewHeight: number) {

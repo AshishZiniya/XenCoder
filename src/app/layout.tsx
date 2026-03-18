@@ -9,6 +9,7 @@ import { ThemeProvider } from "../components/ThemeProvider";
 import { SessionProvider } from "next-auth/react";
 import { Analytics } from "@vercel/analytics/next"
 import { SpeedInsights } from "@vercel/speed-insights/next"
+import AppNavigation from "../components/AppNavigation";
 
 const barlow = Barlow({
   variable: "--font-barlow",
@@ -17,8 +18,8 @@ const barlow = Barlow({
 });
 
 export const metadata: Metadata = {
-  title: "XenCoder - Agentic Multi-Chat Canvas",
-  description: "Next-generation collaborative canvas for multi-agent coding and intelligent workflows.",
+  title: "XenCoder - Agentic Multi-Chat Canvas & Developer Tools",
+  description: "Next-generation collaborative canvas for multi-agent coding and intelligent workflows plus developer tools.",
 };
 
 export default function RootLayout({
@@ -34,9 +35,12 @@ export default function RootLayout({
       >
         <Analytics/>
         <SpeedInsights/>
+        <AppNavigation />
         <ThemeProvider>
           <SessionProvider>
-            {children}
+            <main className="pt-16">
+              {children}
+            </main>
           </SessionProvider>
         </ThemeProvider>
       </body>

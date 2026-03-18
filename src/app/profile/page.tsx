@@ -53,7 +53,7 @@ export default function ProfilePage() {
         <header className="flex items-center justify-between mb-12">
           <Link 
             href="/"
-            className="group flex items-center gap-2 text-sm text-white/40 hover:text-white transition-all underline-offset-4 hover:underline"
+            className="group flex items-center gap-2 text-sm text-white/80 hover:text-white transition-all"
           >
             <div className="size-8 rounded-lg bg-white/5 flex items-center justify-center group-hover:bg-white/10 transition-colors">
               <MaterialIcon name="arrow_back" className="text-lg group-hover:-translate-x-0.5 transition-transform" />
@@ -62,7 +62,7 @@ export default function ProfilePage() {
           </Link>
           <div className="text-right">
             <h1 className="text-xl font-bold tracking-tight">Account Settings</h1>
-            <p className="text-[10px] text-white/30 uppercase tracking-[0.2em]">Manage your digital workspace</p>
+            <p className="text-[10px] text-white/80 uppercase tracking-[0.2em]">Manage your digital workspace</p>
           </div>
         </header>
 
@@ -101,8 +101,8 @@ export default function ProfilePage() {
         </div>
 
         <footer className="mt-20 pt-8 border-t border-white/5 text-center">
-          <p className="text-[10px] text-white/10 uppercase tracking-[0.4em] font-light">
-            XenCoder Systems • Intelligence Matrix v4.2.0
+          <p className="text-[10px] text-white uppercase tracking-[0.4em] font-light">
+            XenCoder Systems • Intelligence Matrix
           </p>
         </footer>
       </motion.div>
