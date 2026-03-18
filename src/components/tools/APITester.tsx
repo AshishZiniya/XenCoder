@@ -2,17 +2,24 @@
 
 import React, { useState } from 'react'
 import Card from '@/components/ui/Card'
-import Button from '@/components/ui/Button'
+import Button from '@/components/ui/button'
 import Input from '@/components/ui/input'
 import Select from '@/components/ui/select'
 import Header from '@/components/ui/header'
+
+interface UserData {
+  id: number
+  username: string
+  email: string
+  roles: string[]
+}
 
 interface APIResponse {
   status: number
   statusText: string
   time: number
   size: string
-  data: any
+  data: UserData
 }
 
 const APITester: React.FC = () => {
@@ -155,25 +162,25 @@ const APITester: React.FC = () => {
               <div className="flex">
                 <div className="line-number text-slate-600 text-right pr-4 select-none">2</div>
                 <div className="pl-4">
-                  <span className="text-blue-400">"id"</span>: <span className="text-green-400">{response.data.id}</span>,
+                  <span className="text-blue-400">&#34;id&#34;</span>: <span className="text-green-400">{response.data.id}</span>,
                 </div>
               </div>
               <div className="flex">
                 <div className="line-number text-slate-600 text-right pr-4 select-none">3</div>
                 <div className="pl-4">
-                  <span className="text-blue-400">"username"</span>: <span className="text-orange-300">"{response.data.username}"</span>,
+                  <span className="text-blue-400">&#34;username&#34;</span>: <span className="text-orange-300">&#34;{response.data.username}&#34;</span>,
                 </div>
               </div>
               <div className="flex">
                 <div className="line-number text-slate-600 text-right pr-4 select-none">4</div>
                 <div className="pl-4">
-                  <span className="text-blue-400">"email"</span>: <span className="text-orange-300">"{response.data.email}"</span>,
+                  <span className="text-blue-400">&#34;email&#34;</span>: <span className="text-orange-300">&#34;{response.data.email}&#34;</span>,
                 </div>
               </div>
               <div className="flex">
                 <div className="line-number text-slate-600 text-right pr-4 select-none">5</div>
                 <div className="pl-4">
-                  <span className="text-blue-400">"roles"</span>: [{response.data.roles.map((role: string) => `<span class="text-orange-300">"${role}"</span>`).join(', ')}]
+                  <span className="text-blue-400">&#34;roles&#34;</span>: [{response.data.roles.map((role: string) => `<span class="text-orange-300">"${role}"</span>`).join(', ')}]
                 </div>
               </div>
               <div className="flex">

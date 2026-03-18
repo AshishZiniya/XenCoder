@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react'
 import Card from '@/components/ui/Card'
-import Button from '@/components/ui/Button'
+import Button from '@/components/ui/button'
 import Select from '@/components/ui/select'
 import Textarea from '@/components/ui/textarea'
 import Header from '@/components/ui/header'

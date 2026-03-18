@@ -1,7 +1,7 @@
 import React from 'react'
 import MainLayout from '@/components/layout/MainLayout'
 import Card from '@/components/ui/Card'
-import Button from '@/components/ui/Button'
+import Button from '@/components/ui/button'
 import Header from '@/components/ui/header'
 import Link from 'next/link'
 

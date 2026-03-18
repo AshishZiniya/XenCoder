@@ -1,7 +1,7 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import FormInput from '../ui/FormInput'
-import Button from '../ui/Button'
+import Button from '../ui/button'
 import MaterialIcon from '../MaterialIcon'
 
 interface ProfileFormProps {

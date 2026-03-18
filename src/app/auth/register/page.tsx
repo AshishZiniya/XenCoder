@@ -6,7 +6,7 @@ import { useRouter } from 'next/navigation'
 import { signIn } from 'next-auth/react'
 import AuthLayout from '@/components/auth/AuthLayout'
 import FormInput from '@/components/ui/FormInput'
-import Button from '@/components/ui/Button'
+import Button from '@/components/ui/button'
 
 export default function RegisterPage() {
   const [error, setError] = useState<string | null>(null)

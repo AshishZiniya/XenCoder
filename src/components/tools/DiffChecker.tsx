@@ -1,8 +1,7 @@
 'use client'
 
 import React, { useState } from 'react'
-import Card from '@/components/ui/Card'
-import Button from '@/components/ui/Button'
+import Button from '@/components/ui/button'
 import Select from '@/components/ui/select'
 import Header from '@/components/ui/header'
 
